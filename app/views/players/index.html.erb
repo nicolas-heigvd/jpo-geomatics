@@ -1,18 +1,38 @@
 <p id="notice"><%= notice %></p><br/>
 
+<%= javascript_include_tag "players.js", defer: true %>
+
 <h2 class="title is-3 has-text-centered">Classement du Grand Concours EC+G</h2>
 <p class="has-text-centered"><a href="https://heig-vd.ch/ecg" target="_blank">Site Web EC+G</a></p><br/>
 <h3 class="title is-5 has-text-centered">Qui gagnera le drône ?</h3><hr/>
 
-<h4 class="title is-6 has-text-centered has-text-link">Le concours est à présent terminé. Toutes nos félicitations à tous les joueurs !</h4>
-<h4 class="title is-6 has-text-centered has-text-link">Le grand gagnant de notre concours est : yapaka (il sera contacté très prochainement par e-mail)</h4>
-<h4 class="title is-6 has-text-centered has-text-link">A l'année prochaine !</h4>
+<table>
+  <tr>
+    <td>
+      <label class="switch">
+        <input type="checkbox" id="reveal" name="show-winner"/>
+        <span class="slider round"></span>
+      </label>
+    </td>
+    <td id="txt">
+      <p>Cocher pour révéler le ou la gagnant.e!</p>
+    </td>
+  </tr>
+</table>
+
+
+<div id="winner">
+  <h4 class="title is-6 has-text-centered has-text-link">Le concours est à présent terminé. Toutes nos félicitations aux personnes ayant participé !</h4>
+  <h4 class="title is-6 has-text-centered has-text-link">La personne qui remporte le concours est :  (il/elle sera contacté.e très prochainement par e-mail)</h4>
+  <h4 class="title is-6 has-text-centered has-text-link">A l'année prochaine !</h4>
+</div>
+
 <hr/>
 
 <% if logged_in? %>
   <%= render partial: 'search', locals: { keyword: @keyword } %>
   <hr/>
-  <%= link_to 'Ajouter un nouveau joueur', new_player_path %>
+  <%= button_to 'Ajouter un nouveau joueur', new_player_path, method: :get %>
   <hr/>
 <% end %>
 
@@ -42,7 +62,7 @@
 
 <hr/>
 <% if logged_in? %>
-  <%= link_to 'Se déconnecter', session_path, method: :delete %>
+  <%= button_to 'Se déconnecter', session_path, method: :delete %>
 <% else %>
-  <%= link_to 'Se connecter', new_session_path %>
+  <%= button_to 'Se connecter', new_session_path, method: :get %>
 <% end %>
