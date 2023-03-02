@@ -27,5 +27,11 @@
   <%= @player.score_geo %>
 </p><br/><hr/>
 
-<%= link_to 'Modifier les informations', edit_player_path(@player) %> |
-<%= link_to 'Retourner au classement', players_path %>
+<table>
+  <td>
+    <%= button_to 'Modifier les informations', edit_player_path(@player), method: :get %>
+  </td>
+  <td>
+    <%= button_to 'Retourner au classement', players_path, method: :get %>
+  <td>
+</table>

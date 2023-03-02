@@ -1,4 +1,5 @@
 <h3 class="title is-5">Effectuer une recherche</h3>
+
 <%= form_tag(players_path, method: :get) do %>
   <div class="field">
     Mot-clé cherché dans le pseudo et l'e-mail des joueurs :
@@ -8,4 +9,4 @@
     <%= submit_tag 'Rechercher', name: nil %>
   </div>
 <% end %>
-<%= link_to 'Annuler la recherche', players_path %>
+<%= button_to 'Annuler la recherche', players_path, method: :get %>

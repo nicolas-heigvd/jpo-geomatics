@@ -8,6 +8,6 @@
     <td class="is-hidden-mobile has-text-centered"><%= player['score_geo'] %></td>
     <td class="score-total has-text-centered"><%= player['score_total'] %></td>
   <% if logged_in %>
-    <td><%= link_to 'Modifier', edit_player_path(player['id']) %></td>
+    <td><%= button_to 'Modifier', edit_player_path(player['id']), method: :get %></td>
   <% end %>
 </tr>
