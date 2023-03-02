@@ -29,3 +29,11 @@
 
 # Ignore file related to upgrade rails 5.2 -> rails 6.0
 /config/initializers/new_framework_defaults_6_0.rb
+
+# Redis stuff
+dump.rdb
+
+# Misc
+.env
+yarn.lock
+
