@@ -33,7 +33,7 @@ class Player < ApplicationRecord
 
   # Function to calculate the total score
   def score_total
-    score_geo + score_gci + score_gen if score_geo && score_gci && score_gen
+    score_geo.to_i + score_gci.to_i + score_gen.to_i
   end
 
   # Function search to search a keyword through a form
