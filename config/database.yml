@@ -16,6 +16,10 @@
 #
 default: &default
   adapter: postgresql
+  host: <%= ENV['POSTGRES_HOST'] %>
+  port: <%= ENV['POSTGRES_PORT'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -80,8 +84,5 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['ECG_JPO_DATABASE_NAME'] %>
-  username: <%= ENV['ECG_JPO_DATABASE_USERNAME'] %>
-  password: <%= ENV['ECG_JPO_DATABASE_PASSWORD'] %>
-  host: <%= ENV['ECG_JPO_DATABASE_HOST'] %>
-  port: <%= ENV['ECG_JPO_DATABASE_PORT'] %>
+  database: <%= ENV['POSTGRES_DB'] %>
+
