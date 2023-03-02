@@ -12,18 +12,20 @@
   <%= @player.email %>
 </p><br/>
 
-<p>
-  <strong>Défi Construction & Infrastructures :</strong>
-  <%= @player.score_gci %>
-</p><br/>
+<% if false %>
+  <p>
+    <strong>Défi Construction & Infrastructures :</strong>
+    <%= @player.score_gci %>
+  </p><br/>
+
+  <p>
+    <strong>Défi Génie de l'Environnement :</strong>
+    <%= @player.score_gen %>
+  </p><br/>
+<% end %>
 
 <p>
-  <strong>Défi Génie de l'Environnement :</strong>
-  <%= @player.score_gen %>
-</p><br/>
-
-<p>
-  <strong>Défi Géomatique et Gestion du territoire :</strong>
+  <strong>Défi du cercle parfait :</strong>
   <%= @player.score_geo %>
 </p><br/><hr/>
 
