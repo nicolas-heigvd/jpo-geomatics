@@ -19,19 +19,20 @@
     E-mail du joueur* : <br/>
     <%= form.text_field :email %>
   </div>
+    <% if false %>
+      <div class="field">
+        Défi Construction & Infrastructures (score entre 0 et 100) :
+        <%= form.number_field :score_gci %>
+      </div>
+
+      <div class="field">
+        Défi Génie de l'Environnement (score entre 0 et 100) :
+        <%= form.number_field :score_gen %>
+      </div>
+    <% end %>
 
   <div class="field">
-    Défi Construction & Infrastructures (score entre 0 et 100) :
-    <%= form.number_field :score_gci %>
-  </div>
-
-  <div class="field">
-    Défi Génie de l'Environnement (score entre 0 et 100) :
-    <%= form.number_field :score_gen %>
-  </div>
-
-  <div class="field">
-    Défi Géomatique et Gestion du territoire (score entre 0 et 100) :
+    Jeu du cercle parfait (score entre 0 et 1000) :
     <%= form.number_field :score_geo %>
   </div>
 

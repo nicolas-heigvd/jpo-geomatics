@@ -8,7 +8,7 @@ class PlayersController < AuthenticateController
     if current_user
       @players = Player.search(keyword, :pseudo)
     else
-      @players = Player.search(keyword, :score_total)
+      @players = Player.search(keyword, :score_geo)
     end
   end
 

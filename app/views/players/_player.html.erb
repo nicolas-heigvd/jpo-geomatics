@@ -3,10 +3,14 @@
   <% if logged_in %>
     <td><%= player['email'] %></td>
   <% end %>
-    <td class="is-hidden-mobile has-text-centered"><%= player['score_gci'] %></td>
-    <td class="is-hidden-mobile has-text-centered"><%= player['score_gen'] %></td>
-    <td class="is-hidden-mobile has-text-centered"><%= player['score_geo'] %></td>
-    <td class="score-total has-text-centered"><%= player['score_total'] %></td>
+    <% if false %>
+      <td class="is-hidden-mobile has-text-centered"><%= player['score_gci'] %></td>
+      <td class="is-hidden-mobile has-text-centered"><%= player['score_gen'] %></td>
+    <% end %>
+      <td class="is-hidden-mobile has-text-centered"><%= player['score_geo'] %></td>
+    <% if false %>
+      <td class="score-total has-text-centered"><%= player['score_total'] %></td>
+    <% end %>
   <% if logged_in %>
     <td><%= button_to 'Modifier', edit_player_path(player['id']), method: :get %></td>
   <% end %>
